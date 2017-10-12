@@ -4,6 +4,7 @@ var url = require("url");
 var basic_url = "http://baidu.com?page=1";
 var next_url = "https://user:pass@sub.host.com:8080/p/a/t/h?query=string#hash";
 
+console.log("protocol");
 console.log(url.parse(next_url));
 
 console.log(url.parse(basic_url));
