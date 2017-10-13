@@ -14,3 +14,6 @@ console.log(platform,release,type,arch);
 console.log(tmpdir);
 console.log(homedir); 
 console.log(hostname);
+
+
+//arch cpus
