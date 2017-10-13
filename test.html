@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+var ch_num = {
+	"0":"零",
+	"1":"一",
+	"2":"二",
+	"3":"三",
+	"4":"四",
+	"5":"五",
+	"6":"六",
+	"7":"七",
+	"8":"八",
+	"9":"九",
+	"10":"十",
+	"100":"百",
+	"1000":"千",
+	"10000":"万"
+}
+function numberChangeOuter(num){
+	var str = "";
+	function numberChange(num){
+		var num0  = num % 10 ;
+		str = ch_num[num0] + str;
+		var lastNum = (num - num0 )/10;
+		if(lastNum<1){
+			return str; 
+		}
+		return numberChange (lastNum); 
+	}
+	return numberChange(num);
+}
+
+// 为什么打印的是 undefined
+console.log(numberChangeOuter(111));
+</script>
+</body>
+</html>
