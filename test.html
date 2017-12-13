@@ -24,9 +24,12 @@ var ch_num = {
 }
 function numberChangeOuter(num){
 	var str = "";
+	var i = 0;
 	function numberChange(num){
 		var num0  = num % 10 ;
-		str = ch_num[num0] + str;
+		
+		str = ch_num[num0] +  numberDigits (i) + str ;
+		i ++ ;
 		var lastNum = (num - num0 )/10;
 		if(lastNum<1){
 			return str; 
@@ -36,8 +39,35 @@ function numberChangeOuter(num){
 	return numberChange(num);
 }
 
+function numberDigits(i){
+	// var i = 0;
+	// var radix = "";
+	// while(num / 10 > 1){
+	// 	num = num/10;
+	// 	i++;
+	// }
+	switch(i){
+		case 1:
+			radix = "十";
+			break;
+		case 2:
+			radix = "百";
+			break;
+		case 3:
+			radix = "千";
+			break;
+		case 4:
+			radix = "万";
+			break;
+		default:
+			radix = "";
+			break;
+	}
+	return radix;
+}
+
 // 为什么打印的是 undefined
-console.log(numberChangeOuter(111));
+console.log(numberChangeOuter(1311));
 </script>
 </body>
 </html>
